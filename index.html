@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WorkConnect — Жұмыс платформасы</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Raleway', sans-serif;
+      background-color: #f3eee7;
+      color: #3e2723;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* ---- HEADER ---- */
+    header {
+      background-color: #4e342e;
+      color: #fff;
+      padding: 16px 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    header .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin: 0;
+      letter-spacing: 0.5px;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    nav a:hover, nav a.active {
+      color: #ffcc80;
+    }
+
+    /* ---- MAIN ---- */
+    main {
+      text-align: center;
+      margin-top: 80px;
+      padding: 0 20px;
+    }
+
+    main h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #3e2723;
+    }
+
+    main p {
+      font-size: 1.1rem;
+      color: #5d4037;
+      max-width: 700px;
+      margin: 0 auto 40px;
+    }
+
+    .btn {
+      background-color: #6d4c41;
+      color: #fff;
+      padding: 12px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .btn:hover {
+      background-color: #5d4037;
+      transform: translateY(-2px);
+    }
+
+    /* ---- RESULTS SECTION ---- */
+    .results {
+      background-color: #ede0d4;
+      padding: 60px 20px;
+      margin-top: 80px;
+      text-align: center;
+    }
+
+    .results h3 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+      color: #3e2723;
+      font-weight: 700;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+
+    .stat {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 25px 40px;
+      width: 220px;
+    }
+
+    .stat h4 {
+      font-size: 2rem;
+      color: #4e342e;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    .stat p {
+      font-size: 1rem;
+      color: #6d4c41;
+    }
+
+    /* ---- FUTURE PLANS ---- */
+    .plans {
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .plans h3 {
+      font-size: 2rem;
+      color: #3e2723;
+      margin-bottom: 30px;
+      font-weight: 700;
+    }
+
+    .plan-box {
+      max-width: 800px;
+      background: #fff;
+      border-radius: 15px;
+      padding: 40px;
+      margin: 0 auto;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      line-height: 1.7;
+      color: #5d4037;
+      font-size: 1.05rem;
+    }
+
+    /* ---- FOOTER ---- */
+    footer {
+      background-color: #4e342e;
+      color: #d7ccc8;
+      text-align: center;
+      padding: 20px;
+      margin-top: 80px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Навигация -->
+  <header>
+    <div class="container">
+      <h1>WorkConnect</h1>
+      <nav>
+        <a href="index.html" class="active">Басты</a>
+        <a href="jobs.html">Вакансиялар</a>
+        <a href="services.html">Қызметтер</a>
+        <a href="login.html">Кіру</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Негізгі бөлім -->
+  <main>
+    <h2>Жұмыс беруші мен үміткерді байланыстыратын заманауи жүйе</h2>
+    <p>WorkConnect — жұмыс табу мен кадр іріктеуді жеңілдететін инновациялық онлайн платформа.  
+    Біз тиімді, қауіпсіз және ыңғайлы байланыс орнатуға көмектесеміз.</p>
+    <a href="jobs.html" class="btn">Бастау</a>
+  </main>
+
+  <!-- Нәтижелер -->
+  <section class="results">
+    <h3>Компания жетістіктері</h3>
+    <div class="stats">
+      <div class="stat">
+        <h4>15 000+</h4>
+        <p>Тіркелген қолданушы</p>
+      </div>
+      <div class="stat">
+        <h4>3 200+</h4>
+        <p>Жарияланған вакансия</p>
+      </div>
+      <div class="stat">
+        <h4>98%</h4>
+        <p>Қанағаттану деңгейі</p>
+      </div>
+    </div>
+  </section>
+
+    <!-- Болашақ жоспарлар -->
+  <section class="plans">
+    <h3>Болашақ жоспарларымыз</h3>
+    <div class="flex flex-wrap justify-center gap-8 mt-10">
+
+      <div class="bg-white rounded-2xl shadow-lg p-8 w-72 transition transform hover:-translate-y-2 hover:shadow-2xl">
+        <h4 class="text-xl font-semibold text-[#4e342e] mb-3">Жасанды интеллект</h4>
+        <p class="text-[#6d4c41] text-sm leading-relaxed">
+          Үміткер мен жұмыс берушіні сәйкестендіретін интеллектуалды жүйе енгізу арқылы іздеу процесін оңтайландыру.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-lg p-8 w-72 transition transform hover:-translate-y-2 hover:shadow-2xl">
+        <h4 class="text-xl font-semibold text-[#4e342e] mb-3">Мобильді қосымша</h4>
+        <p class="text-[#6d4c41] text-sm leading-relaxed">
+          Пайдаланушылар үшін ыңғайлы әрі жылдам жұмыс істеуге мүмкіндік беретін WorkConnect мобильді қосымшасын жасау.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-lg p-8 w-72 transition transform hover:-translate-y-2 hover:shadow-2xl">
+        <h4 class="text-xl font-semibold text-[#4e342e] mb-3">Онлайн сұхбаттар</h4>
+        <p class="text-[#6d4c41] text-sm leading-relaxed">
+          Платформа ішінде бейне және мәтіндік сұхбат өткізу мүмкіндігін қосу арқылы іріктеу уақытын қысқарту.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-lg p-8 w-72 transition transform hover:-translate-y-2 hover:shadow-2xl">
+        <h4 class="text-xl font-semibold text-[#4e342e] mb-3">Кәсіби даму</h4>
+        <p class="text-[#6d4c41] text-sm leading-relaxed">
+          Курстар мен вебинарлар арқылы қолданушылардың кәсіби дағдыларын арттыру платформасын іске қосу.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Төменгі бөлім -->
+  <footer>
+    <p>© 2025 WorkConnect. Барлық құқықтар қорғалған.</p>
+  </footer>
+
+</body>
+</html>

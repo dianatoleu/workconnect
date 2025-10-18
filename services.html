@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Қызметтер — WorkConnect</title>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<style>
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #f3eee7;
+    color: #3e2723;
+}
+header {
+    background-color: #4e342e;
+    color: #fff;
+}
+nav a {
+    color: #fff;
+    font-weight: 500;
+}
+nav a.active, nav a:hover {
+    color: #ffcc80;
+}
+.service-box {
+    background: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.service-box:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+.service-content {
+    display: none;
+    margin-top: 20px;
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.btn {
+    background-color: #6d4c41;
+    color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+.btn:hover {
+    background-color: #5d4037;
+}
+.tip {
+    background: #fcefdc;
+    border-left: 4px solid #ffb74d;
+    padding: 10px 15px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container mx-auto flex justify-between items-center p-4">
+    <h1 class="text-2xl font-bold">WorkConnect</h1>
+    <nav class="space-x-6">
+      <a href="index.html">Басты</a>
+      <a href="jobs.html">Вакансиялар</a>
+      <a href="services.html" class="active">Қызметтер</a>
+      <a href="login.html">Кіру</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container mx-auto mt-12 px-6">
+  <h2 class="text-4xl text-center mb-6">Біздің қызметтер</h2>
+  <p class="text-center mb-10 max-w-2xl mx-auto">
+    WorkConnect платформасы — жұмыс іздеуді, кадр іріктеуді және HR процестерін автоматтандыруға арналған заманауи шешім.
+  </p>
+
+  <div class="grid md:grid-cols-3 gap-6">
+    <div class="service-box text-center" data-target="job-search">
+      <div class="text-4xl mb-4">💼</div>
+      <h3 class="text-xl mb-2 font-semibold">Жұмыс іздеу жүйесі</h3>
+      <p>Салаңыз бойынша қолайлы жұмыс орнын табыңыз.</p>
+    </div>
+
+    <div class="service-box text-center" data-target="resume-builder">
+      <div class="text-4xl mb-4">🧾</div>
+      <h3 class="text-xl mb-2 font-semibold">Түйіндеме құру</h3>
+      <p>Кәсіби түйіндеме жасау онлайн.</p>
+    </div>
+
+    <div class="service-box text-center" data-target="feedback-system">
+      <div class="text-4xl mb-4">💡</div>
+      <h3 class="text-xl mb-2 font-semibold">Кері байланыс жүйесі</h3>
+      <p>Пайдаланушылар пікірін жинау және талдау.</p>
+    </div>
+
+    <div class="service-box text-center" data-target="analytics">
+      <div class="text-4xl mb-4">📊</div>
+      <h3 class="text-xl mb-2 font-semibold">Аналитика және есеп</h3>
+      <p>Компанияның статистикасын бақылау.</p>
+    </div>
+
+    <div class="service-box text-center" data-target="interview">
+      <div class="text-4xl mb-4">🎯</div>
+      <h3 class="text-xl mb-2 font-semibold">Сұхбатқа дайындық</h3>
+      <p>Жиі қойылатын сұрақтар және кеңестер.</p>
+    </div>
+
+    <div class="service-box text-center" data-target="online-consult">
+      <div class="text-4xl mb-4">💬</div>
+      <h3 class="text-xl mb-2 font-semibold">Онлайн кеңес беру</h3>
+      <p>HR мамандарынан нақты ұсыныстар.</p>
+    </div>
+  </div>
+
+  <!-- Контент блоктар -->
+  <div id="job-search" class="service-content">
+    <h3 class="text-2xl font-bold mb-2">Дайын вакансиялар</h3>
+    <p>Мұнда сіз барлық қолжетімді вакансияларды көріп, өтініш бере аласыз. <a href="jobs.html" class="text-blue-700 underline">Вакансиялар бетіне өту</a></p>
+  </div>
+
+  <div id="resume-builder" class="service-content">
+    <h3 class="text-2xl font-bold mb-2">Онлайн түйіндеме құру</h3>
+    <p>Қолданушы ақпаратын толтырыңыз және PNG түрінде сақтаңыз:</p>
+    <form id="resumeForm" class="mt-4 space-y-3">
+      <input type="text" placeholder="Аты-жөніңіз" class="border rounded px-3 py-2 w-full" required>
+      <input type="text" placeholder="Мекенжайы" class="border rounded px-3 py-2 w-full">
+      <input type="tel" placeholder="Телефон нөмірі" class="border rounded px-3 py-2 w-full">
+      <input type="date" placeholder="Туған күні" class="border rounded px-3 py-2 w-full">
+      <input type="text" placeholder="Туған жері" class="border rounded px-3 py-2 w-full">
+      <input type="text" placeholder="Ұлты" class="border rounded px-3 py-2 w-full">
+      <input type="text" placeholder="Жанұя жағдайы" class="border rounded px-3 py-2 w-full">
+      <textarea placeholder="Білімі" class="border rounded px-3 py-2 w-full"></textarea>
+      <textarea placeholder="Тәжірибесі" class="border rounded px-3 py-2 w-full"></textarea>
+      <input type="text" placeholder="Мамандығы" class="border rounded px-3 py-2 w-full">
+      <input type="text" placeholder="Тілдерді білу" class="border rounded px-3 py-2 w-full">
+      <textarea placeholder="Жеке қасиеттері" class="border rounded px-3 py-2 w-full"></textarea>
+      <button type="submit" class="btn w-full">Түйіндеме жасау</button>
+    </form>
+  </div>
+
+  <div id="feedback-system" class="service-content">
+    <h3 class="text-2xl font-bold mb-2">Кері байланыс жүйесі</h3>
+    <p>Біздің қызмет туралы ойыңызды білдіріңіз:</p>
+    <div class="mt-3 flex space-x-3" id="feedback">
+      <span class="feedback-emoji text-2xl cursor-pointer">😃</span>
+      <span class="feedback-emoji text-2xl cursor-pointer">😊</span>
+      <span class="feedback-emoji text-2xl cursor-pointer">😐</span>
+      <span class="feedback-emoji text-2xl cursor-pointer">😔</span>
+      <span class="feedback-emoji text-2xl cursor-pointer">😡</span>
+    </div>
+    <textarea id="feedback-text" placeholder="Пікіріңізді осында жазыңыз..." class="border rounded px-3 py-2 w-full mt-3" rows="3"></textarea>
+    <button id="feedback-submit" class="btn w-full mt-3">Жіберу</button>
+    <p id="feedback-thanks" class="text-green-700 font-semibold mt-3 hidden">Рақмет! 💖</p>
+  </div>
+
+  <div id="analytics" class="service-content">
+    <h3 class="text-2xl font-bold mb-2">Аналитика және есеп</h3>
+    <p>Компанияның статистикасы: әр айдағы жұмыс беру көрсеткіштері.</p>
+    <canvas id="jobsChart" width="400" height="300" style="display:none;"></canvas>
+  </div>
+
+  <div id="interview" class="service-content">
+    <h3 class="text-2xl font-bold mb-2">Сұхбатқа дайындық</h3>
+    <p>Мына сұрақтар сұхбат кезінде жиі қойылады:</p>
+    <ul class="list-decimal ml-5 mt-3 space-y-2">
+      <li>Өзіңіз туралы қысқаша айтып беріңіз.</li>
+      <li>Неліктен біздің компанияны таңдадыңыз?</li>
+      <li>Сіздің басты артықшылықтарыңыз қандай?</li>
+      <li>Соңғы жұмысыңызда не үйрендіңіз?</li>
+      <li>Жұмыста қиын жағдай болса қалай шешесіз?</li>
+      <li>Командада қалай жұмыс істейсіз?</li>
+      <li>Болашақтағы мақсаттарыңыз қандай?</li>
+      <li>Қай уақытта ең өнімді жұмыс істейсіз?</li>
+      <li>Сіз үшін идеалды жұмысшы қандай?</li>
+      <li>Біз сізді неге жұмысқа алуымыз керек деп ойлайсыз?</li>
+    </ul>
+    <div class="tip">
+      💡 Кеңес: Сұрақтарға жауап бергенде шынайы әрі сенімді болыңыз, нақты мысалдар келтіріңіз.
+    </div>
+  </div>
+
+<div id="online-consult" class="service-content">
+  <h3 class="text-2xl font-bold mb-2">Онлайн кеңес беру</h3>
+  <p>HR мамандарының ұсыныстары мен кеңестері:</p>
+  <ul class="list-disc ml-5 mt-2 space-y-1">
+    <li>Резюме қалай жақсартуға болады?</li>
+    <li>Сұхбатқа қалай дайындалу керек?</li>
+    <li>Кәсіби даму жолдары.</li>
+  </ul>
+</div>
+
+  <div id="direct-consult" class="mt-6 p-4 bg-yellow-100 border-l-8 border-yellow-500 rounded shadow-lg" style="display:none;">
+  <h4 class="font-bold text-lg mb-2">📞 Тікелей кеңес алу</h4>
+  <p class="text-yellow-800">
+    Мамандарға қоңырау шалыңыз және сұрақтарыңызға нақты жауап алыңыз: 
+    <a href="tel:+77001234567" class="underline font-semibold hover:text-yellow-900">+7 700 123 45 67</a>
+  </p>
+</div>
+
+</main>
+
+<footer class="bg-[#4e342e] text-[#d7ccc8] text-center py-4 mt-16">
+  <p>© 2025 WorkConnect. Барлық құқықтар қорғалған.</p>
+</footer>
+
+<!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+const boxes = document.querySelectorAll('.service-box');
+const contents = document.querySelectorAll('.service-content');
+let chartInitialized = false;
+
+boxes.forEach(box => {
+  box.addEventListener('click', () => {
+    const target = box.dataset.target;
+    contents.forEach(c => c.style.display = 'none');
+    const activeContent = document.getElementById(target);
+    activeContent.style.display = 'block';
+    activeContent.scrollIntoView({behavior: 'smooth'});
+
+    // Тікелей кеңесті тек онлайн кеңес үшін көрсету
+    const directConsult = document.getElementById('direct-consult');
+    if(target === 'online-consult') {
+      directConsult.style.display = 'block';
+    } else {
+      directConsult.style.display = 'none';
+    }
+
+    // Аналитика графигі
+    if(target === 'analytics') {
+      const canvas = document.getElementById('jobsChart');
+      canvas.style.display = 'block';
+      if(!chartInitialized) {
+        const ctx = canvas.getContext('2d');
+        new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: ['Қаңтар','Ақпан','Наурыз','Сәуір','Мамыр','Маусым','Шілде','Тамыз','Қыркүйек','Қазан','Қараша','Желтоқсан'],
+            datasets: [{
+              label: 'Жұмыс беру саны',
+              data: [12,19,7,15,22,9,14,18,20,16,12,25],
+              backgroundColor: 'rgba(92,64,51,0.6)',
+              borderColor: 'rgba(92,64,51,1)',
+              borderWidth: 1
+            }]
+          },
+          options: { responsive:true, scales: { y: { beginAtZero:true, ticks:{stepSize:5} } } }
+        });
+        chartInitialized = true;
+      }
+    }
+  });
+});
+
+
+// PNG түйіндеме генерациясы
+document.getElementById('resumeForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const data = Array.from(this.elements)
+                    .filter(input => input.tagName !== "BUTTON")
+                    .map(input => input.value);
+  const labels = ["Аты-жөні","Мекенжайы","Телефон","Туған күні","Туған жері","Ұлты","Жанұя жағдайы","Білімі","Тәжірибесі","Мамандығы","Тілдер","Жеке қасиеттері"];
+
+  const canvas = document.createElement('canvas');
+  const width = 595;
+  const height = 842;
+  canvas.width = width;
+  canvas.height = height;
+  const ctx = canvas.getContext('2d');
+
+  ctx.fillStyle = '#f3eee7';
+  ctx.fillRect(0,0,width,height);
+  ctx.fillStyle = 'rgb(92,64,51)';
+  ctx.font = "20px Times New Roman";
+  ctx.textAlign = "center";
+  ctx.fillText("WorkConnect", width/2, 40);
+  ctx.font = "16px Times New Roman";
+  ctx.fillText("Түйіндеме", width/2, 70);
+
+  ctx.textAlign = "left";
+  ctx.font = "14px Times New Roman";
+  let y = 100;
+  labels.forEach((label,i)=>{
+    ctx.fillText(`${label}: ${data[i]}`, 40, y);
+    y+=24;
+  });
+
+  const link = document.createElement('a');
+  link.download = `${data[0] || "Resume"}.png`;
+  link.href = canvas.toDataURL("image/png");
+  link.click();
+});
+
+// Кері байланыс жүйесі JS
+(function(){
+  let selectedEmoji = '';
+  const emojis = document.querySelectorAll('#feedback .feedback-emoji');
+  const feedbackText = document.getElementById('feedback-text');
+  const feedbackSubmit = document.getElementById('feedback-submit');
+  const feedbackThanks = document.getElementById('feedback-thanks');
+
+  emojis.forEach(emoji => {
+    emoji.addEventListener('click', () => {
+      selectedEmoji = emoji.textContent;
+      emojis.forEach(e => e.classList.remove('scale-125'));
+      emoji.classList.add('scale-125');
+    });
+  });
+
+  feedbackSubmit.addEventListener('click', () => {
+    if (!selectedEmoji) {
+      alert('Қызметке баға беріңіз (смайлик таңдаңыз)!');
+      return;
+    }
+    const text = feedbackText.value.trim();
+    console.log('Бағалау:', selectedEmoji, 'Пікір:', text);
+
+    feedbackThanks.classList.remove('hidden');
+    feedbackText.value = '';
+    selectedEmoji = '';
+    emojis.forEach(e => e.classList.remove('scale-125'));
+  });
+})();
+</script>
+
+<style>
+#feedback .feedback-emoji.scale-125 {
+  transform: scale(1.5);
+  transition: transform 0.2s;
+}
+</style>
+
+</body>
+</html>

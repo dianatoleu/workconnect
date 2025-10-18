@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Кіру / Тіркелу — WorkConnect</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Raleway', sans-serif;
+      background-color: #f3eee7;
+      color: #3e2723;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #4e342e;
+      color: #fff;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    nav a:hover, nav a.active {
+      color: #ffcc80;
+    }
+    main h2 {
+      color: #3e2723;
+    }
+    form {
+      background: #fff;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    input, textarea {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 10px;
+      width: 100%;
+      font-family: 'Raleway', sans-serif;
+      color: #3e2723;
+    }
+    button {
+      background-color: #6d4c41;
+      color: #fff;
+      font-weight: 600;
+      border-radius: 8px;
+      padding: 12px 20px;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+    button:hover {
+      background-color: #5d4037;
+      transform: translateY(-2px);
+    }
+    .popup {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 50;
+    }
+    .popup-content {
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      color: #5d4037;
+    }
+    .popup-content h3 {
+      color: #4e342e;
+    }
+    footer {
+      background-color: #4e342e;
+      color: #d7ccc8;
+      text-align: center;
+      padding: 20px;
+      margin-top: 80px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Навигация -->
+  <header>
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <h1 class="text-2xl font-bold">WorkConnect</h1>
+      <nav class="space-x-6">
+        <a href="index.html">Басты</a>
+        <a href="jobs.html">Вакансиялар</a>
+        <a href="services.html">Қызметтер</a>
+        <a href="apply.html">Өтініш беру</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Контейнер -->
+  <main class="flex items-center justify-center h-screen -mt-16">
+    <div class="w-full max-w-md">
+
+      <!-- Кіру формасы -->
+      <div id="loginForm">
+        <form id="login">
+          <h2 class="text-3xl font-bold text-center mb-6">Жүйеге кіру</h2>
+          <div class="mb-4">
+            <label class="block mb-2 font-medium">Электронды пошта:</label>
+            <input type="email" placeholder="email@gmail.com" required>
+          </div>
+          <div class="mb-4">
+            <label class="block mb-2 font-medium">Құпия сөз:</label>
+            <input type="password" placeholder="********" required>
+          </div>
+          <div class="flex justify-between items-center mb-6">
+            <label class="flex items-center">
+              <input type="checkbox" class="mr-2"> Мені есте сақта
+            </label>
+            <a href="#" class="text-[#6d4c41] hover:underline text-sm">Құпия сөзді ұмыттыңыз ба?</a>
+          </div>
+          <button type="submit" class="w-full">Кіру</button>
+        </form>
+        <p class="text-center mt-6">
+          Тіркелмегенсіз бе?
+          <button id="showRegister" class="text-[#6d4c41] hover:underline font-semibold">Тіркелу</button>
+        </p>
+      </div>
+
+      <!-- Тіркелу формасы -->
+      <div id="registerForm" class="hidden">
+        <form id="register">
+          <h2 class="text-3xl font-bold text-center mb-6">Тіркелу</h2>
+          <div class="mb-4">
+            <label class="block mb-2 font-medium">Аты-жөніңіз:</label>
+            <input type="text" placeholder="Атыңыз" required>
+          </div>
+          <div class="mb-4">
+            <label class="block mb-2 font-medium">Электронды пошта:</label>
+            <input type="email" placeholder="email@gmail.com" required>
+          </div>
+          <div class="mb-4">
+            <label class="block mb-2 font-medium">Құпия сөз:</label>
+            <input type="password" placeholder="********" required>
+          </div>
+          <div class="mb-6">
+            <label class="block mb-2 font-medium">Құпия сөзді растау:</label>
+            <input type="password" placeholder="********" required>
+          </div>
+          <button type="submit" class="w-full">Тіркелу</button>
+        </form>
+        <p class="text-center mt-6">
+          Бұрын тіркелдіңіз бе?
+          <button id="showLogin" class="text-[#6d4c41] hover:underline font-semibold">Кіру</button>
+        </p>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Всплывающее терезе -->
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <h3>✅ Сәтті орындалды!</h3>
+      <p>Операция сәтті аяқталды.</p>
+      <button id="closePopup">Жабу</button>
+    </div>
+  </div>
+
+  <script>
+    const loginForm = document.getElementById('loginForm');
+    const registerForm = document.getElementById('registerForm');
+    const showRegister = document.getElementById('showRegister');
+    const showLogin = document.getElementById('showLogin');
+    const popup = document.getElementById('popup');
+    const closePopup = document.getElementById('closePopup');
+
+    showRegister.addEventListener('click', () => {
+      loginForm.classList.add('hidden');
+      registerForm.classList.remove('hidden');
+    });
+
+    showLogin.addEventListener('click', () => {
+      registerForm.classList.add('hidden');
+      loginForm.classList.remove('hidden');
+    });
+
+    document.getElementById('login').addEventListener('submit', e => {
+      e.preventDefault();
+      popup.style.display = 'flex';
+    });
+
+    document.getElementById('register').addEventListener('submit', e => {
+      e.preventDefault();
+      popup.style.display = 'flex';
+    });
+
+    closePopup.addEventListener('click', () => popup.style.display = 'none');
+    popup.addEventListener('click', e => { if (e.target === popup) popup.style.display = 'none'; });
+  </script>
+
+  <footer>
+    <p>© 2025 WorkConnect. Барлық құқықтар қорғалған.</p>
+  </footer>
+
+</body>
+</html>

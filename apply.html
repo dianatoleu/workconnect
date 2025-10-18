@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Өтініш беру — WorkConnect</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Raleway', sans-serif;
+      background-color: #f3eee7;
+      color: #3e2723;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #4e342e;
+      color: #fff;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    nav a:hover, nav a.active {
+      color: #ffcc80;
+    }
+    main h2 {
+      color: #3e2723;
+    }
+    main p {
+      color: #5d4037;
+    }
+    form {
+      background: #fff;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    input, textarea {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 10px;
+      width: 100%;
+      font-family: 'Raleway', sans-serif;
+      color: #3e2723;
+    }
+    button {
+      background-color: #6d4c41;
+      color: #fff;
+      font-weight: 600;
+      border-radius: 8px;
+      padding: 12px 20px;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+    button:hover {
+      background-color: #5d4037;
+      transform: translateY(-2px);
+    }
+    .popup {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 50;
+    }
+    .popup-content {
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      animation: fadeIn 0.3s ease;
+      color: #5d4037;
+    }
+    .popup-content h3 {
+      color: #4e342e;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    footer {
+      background-color: #4e342e;
+      color: #d7ccc8;
+      text-align: center;
+      padding: 20px;
+      margin-top: 80px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Навигация -->
+  <header>
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <h1 class="text-2xl font-bold">WorkConnect</h1>
+      <nav class="space-x-6">
+        <a href="index.html">Басты</a>
+        <a href="jobs.html">Вакансиялар</a>
+        <a href="services.html">Қызметтер</a>
+        <a href="login.html">Кіру</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Өтініш беру формасы -->
+  <main class="container mx-auto mt-12 px-6">
+    <h2 class="text-4xl font-bold text-center mb-8">Өтініш беру формасы</h2>
+
+    <form id="applyForm" class="max-w-lg mx-auto">
+      <div class="mb-4">
+        <label class="block mb-2 font-medium">Аты-жөніңіз:</label>
+        <input type="text" placeholder="Тегі-Аты-Әкесінің аты" required>
+      </div>
+
+      <div class="mb-4">
+        <label class="block mb-2 font-medium">Электронды пошта:</label>
+        <input type="email" placeholder="email@gmail.com" required>
+      </div>
+
+      <div class="mb-4">
+        <label class="block mb-2 font-medium">Телефон нөмірі:</label>
+        <input type="tel" placeholder="+7 7XX XXX XXXX" required>
+      </div>
+
+      <div class="mb-4">
+        <label class="block mb-2 font-medium">Түйіндеме (PDF, DOCX):</label>
+        <input type="file" accept=".pdf,.doc,.docx">
+      </div>
+
+      <div class="mb-6">
+        <label class="block mb-2 font-medium">Қосымша хабарлама:</label>
+        <textarea rows="4" placeholder="Қысқаша өзіңіз жайлы жазыңыз..."></textarea>
+      </div>
+
+      <button type="submit" class="w-full">Өтініш жіберу</button>
+    </form>
+  </main>
+
+  <!-- Всплывающее окно -->
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <h3>✅ Өтініш қабылданды!</h3>
+      <p>Компания жақын уақытта сізбен хабарласады.</p>
+      <button id="closePopup">Жабу</button>
+    </div>
+  </div>
+
+  <!-- Төменгі бөлім -->
+  <footer>
+    <p>© 2025 WorkConnect. Барлық құқықтар қорғалған.</p>
+  </footer>
+
+  <script>
+    const form = document.getElementById('applyForm');
+    const popup = document.getElementById('popup');
+    const closeBtn = document.getElementById('closePopup');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      popup.style.display = 'flex';
+      form.reset();
+    });
+
+    closeBtn.addEventListener('click', function() {
+      popup.style.display = 'none';
+    });
+
+    popup.addEventListener('click', function(e) {
+      if (e.target === popup) popup.style.display = 'none';
+    });
+  </script>
+
+</body>
+</html>

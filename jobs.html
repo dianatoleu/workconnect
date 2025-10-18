@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WorkConnect | Вакансиялар</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Негізгі стиль */
+    body {
+      font-family: 'Raleway', sans-serif;
+      background-color: #f3eee7;
+      color: #3e2723;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #5d4037;
+      color: #fff;
+      padding: 15px 0;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    header .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover, nav a.active {
+      color: #ffcc80;
+    }
+
+    main {
+      width: 90%;
+      max-width: 1100px;
+      margin: 40px auto;
+      text-align: center;
+    }
+
+    main h2 {
+      color: #4e342e;
+      font-size: 2rem;
+      margin-bottom: 30px;
+      font-weight: 700;
+    }
+
+    .jobs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .job-card {
+      background-color: #fff8f2;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      padding: 20px;
+      text-align: left;
+      transition: all 0.3s ease;
+    }
+
+    .job-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+
+    .job-card h3 {
+      color: #6d4c41;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .job-card p {
+      color: #4e342e;
+      margin: 6px 0;
+    }
+
+    .apply-btn {
+      display: inline-block;
+      background-color: #795548;
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      margin-top: 10px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .apply-btn:hover {
+      background-color: #6d4c41;
+    }
+
+    footer {
+      background-color: #3e2723;
+      color: #d7ccc8;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 60px;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      nav a { margin-left: 10px; }
+      main h2 { font-size: 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Үстіңгі мәзір -->
+  <header>
+    <div class="container">
+      <h1>WorkConnect</h1>
+      <nav>
+        <a href="index.html">Басты</a>
+        <a href="jobs.html" class="active">Вакансиялар</a>
+        <a href="services.html">Қызметтер</a>
+        <a href="login.html">Кіру</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Негізгі бөлім -->
+  <main>
+    <h2>Ашық вакансиялар</h2>
+
+    <div class="jobs-grid">
+      <div class="job-card">
+        <h3>Фронтенд әзірлеуші</h3>
+        <p><strong>Компания:</strong> TechVision</p>
+        <p><strong>Орналасқан жері:</strong> Алматы</p>
+        <p><strong>Жалақы:</strong> 500 000 ₸</p>
+        <a href="apply.html" class="apply-btn">Өтініш беру</a>
+      </div>
+
+      <div class="job-card">
+        <h3>Графикалық дизайнер</h3>
+        <p><strong>Компания:</strong> CreativeHub</p>
+        <p><strong>Орналасқан жері:</strong> Астана</p>
+        <p><strong>Жалақы:</strong> 400 000 ₸</p>
+        <a href="apply.html" class="apply-btn">Өтініш беру</a>
+      </div>
+
+      <div class="job-card">
+        <h3>Контент менеджер</h3>
+        <p><strong>Компания:</strong> MediaPro</p>
+        <p><strong>Орналасқан жері:</strong> Шымкент</p>
+        <p><strong>Жалақы:</strong> 350 000 ₸</p>
+        <a href="apply.html" class="apply-btn">Өтініш беру</a>
+      </div>
+
+      <div class="job-card">
+        <h3>Бағдарламашы</h3>
+        <p><strong>Компания:</strong> SoftLine</p>
+        <p><strong>Орналасқан жері:</strong> Қарағанды</p>
+        <p><strong>Жалақы:</strong> 600 000 ₸</p>
+        <a href="apply.html" class="apply-btn">Өтініш беру</a>
+      </div>
+
+      <div class="job-card">
+        <h3>Маркетолог</h3>
+        <p><strong>Компания:</strong> Brandify</p>
+        <p><strong>Орналасқан жері:</strong> Атырау</p>
+        <p><strong>Жалақы:</strong> 450 000 ₸</p>
+        <a href="apply.html" class="apply-btn">Өтініш беру</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Төменгі бөлім -->
+  <footer>
+    <p>© 2025 WorkConnect. Барлық құқықтар қорғалған.</p>
+  </footer>
+
+</body>
+</html>
